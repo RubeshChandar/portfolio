@@ -1,0 +1,43 @@
+.main-row {
+    height: 80vh;
+}
+
+.main img {
+    height: 900px;
+    border-bottom: 2px solid black;
+}
+
+.hw {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.sw-cont {
+    display: inline-block;
+}
+
+.sw {
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: green;
+    border-right: 3px solid red;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    animation:
+        typing 3s steps(50),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+}
