@@ -2,9 +2,14 @@ body {
     background-color: #e8e9e8;
 }
 
-nav .container-fluid {
+.navbar {
     align-content: center;
     max-height: 10vh;
+    padding: 10px 30px;
+}
+
+.max-w {
+    width: 100%;
 }
 
 .navbar-col {
@@ -14,4 +19,26 @@ nav .container-fluid {
 .name {
     font-weight: bold !important;
     font-size: 0.8rem;
+}
+
+.fa {
+    margin: 0 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin: 0px 5px;
+    padding-bottom: 3px;
+}
+
+.links a:hover {
+    font-size: 1.1rem !important;
+}
+
+.active {
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    border-bottom: 2px solid black;
 }
