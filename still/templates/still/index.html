@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static "still/index.css" %}">
+
 {% endblock css %}
+
 {% block content %}
 <div class="container p-5">
     <div class="row align-items-center">
@@ -16,9 +19,11 @@
             <div class="sw-cont">
                 <p class="sw">&ltp&gt I'm Rubesh, a curious Software Developer 💻 &lt/p&gt</p>
             </div>
+            {% include "still/include/scrolling-h.html" %}
             <div class="bt-f">
                 <a class="connect-btn connect"> Contact ME </a>
             </div>
+
         </div>
 
     </div>

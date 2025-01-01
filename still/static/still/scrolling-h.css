@@ -1,0 +1,69 @@
+.mar {
+    margin: 50px 0px;
+}
+
+.scroller {
+    max-width: 100%;
+    /* outline: 3px solid lime; */
+}
+
+.tag-list li i {
+    margin-right: 6px;
+}
+
+.tag-list {
+    padding-inline: 0;
+    list-style: none;
+}
+
+.scroller__inner {
+    display: flex;
+    gap: 0.1rem;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+    /* padding: 10px; */
+}
+
+.tag-list li {
+    border-radius: 0.5rem;
+    background-color: #cdd1cd;
+    /* background-image: linear-gradient(32deg, #cdd1cd, #e5e5e5); */
+    box-shadow: 0 1.1rem 1rem -0.25rem #a09d9dde;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.scroller[data-animated=true] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, #cdd1cd 10%, #cdd1cd 90%, transparent);
+    mask: linear-gradient(90deg, transparent, #cdd1cd 10%, #cdd1cd 90%, transparent);
+}
+
+.scroller[data-animated=true] .scroller__inner {
+    flex-wrap: nowrap;
+    width: max-content;
+}
+
+.scroller[data-animated=true] .scroller__inner[set=one] {
+    animation: scroll1 35s linear infinite;
+}
+
+.scroller[data-animated=true] .scroller__inner[set=two] {
+    animation: scroll2 45s linear infinite;
+}
+
+.scroller[data-animated=true] .scroller__inner[set=three] {
+    animation: scroll2 60s linear infinite;
+}
+
+@keyframes scroll1 {
+    to {
+        transform: translate(-50%);
+    }
+}
+
+@keyframes scroll2 {
+    to {
+        transform: translate(-50%);
+    }
+}
