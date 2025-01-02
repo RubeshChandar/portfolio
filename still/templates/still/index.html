@@ -7,7 +7,7 @@
 {% endblock css %}
 
 {% block content %}
-<div class="container p-5">
+<div class="container p-4">
     <div class="row align-items-center">
 
         <div class="col-lg-5 main">
@@ -21,7 +21,7 @@
             </div>
             {% include "still/include/scrolling-h.html" %}
             <div class="bt-f">
-                <a class="connect-btn connect"> Contact ME </a>
+                <a class="connect-btn connect" href="{% url "contact" %}"> Get in Touch </a>
             </div>
 
         </div>

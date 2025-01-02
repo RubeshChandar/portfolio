@@ -10,3 +10,7 @@ def index(request):
 
 def resume(request):
     return render(request, "still/resume.html")
+
+
+def contact(request):
+    return render(request, "still/contact.html")
