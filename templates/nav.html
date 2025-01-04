@@ -15,18 +15,20 @@
         <div class="col-md-6 text-center links">
             <a href="{% url "home" %}" class="{% if url_name == 'home' %}active{% endif %}">Home</a>
             <a href="{% url "resume" %}" class="{% if url_name == 'resume' %}active{% endif %}">Resume</a>
-            <a href="{% url "contact" %}" class="{% if url_name == 'contact' %}active{% endif %}">Contact</a>
             <a href="">Projects</a>
             <a href="">Blog</a>
         </div>
         {% endwith %}
 
         <div class="col-md-3 text-end">
+            <a href="https://linkedin.com/in/rubeshchandar" class="linkedin">
+                <i class="fa-brands fa-linkedin" style="font-size:30px"></i>
+            </a>
             <a href="https://github.com/RubeshChandar" class="git">
                 <i class="fa-brands fa-github" style="font-size:30px;color:black"></i>
             </a>
-            <a href="https://linkedin.com/in/rubeshchandar" class="linkedin">
-                <i class="fa-brands fa-linkedin" style="font-size:30px"></i>
+            <a href="mailto:rubeshchandar@gmail.com" class="mail">
+                <i class="fa-solid fa-envelope" style="font-size:30px"></i>
             </a>
         </div>
 

@@ -34,8 +34,9 @@
 }
 
 .tag-list li:hover {
-    cursor: pointer;
+    cursor: crosshair;
     background-color: rgb(255, 161, 29);
+    /* background-color: rgba(0, 199, 0, 0.915); */
 }
 
 .scroller[data-animated=true] {

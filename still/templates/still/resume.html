@@ -5,5 +5,22 @@
 {% block content %}
 <div class="container p-5">
     <h1>This showcases my resume</h1>
+
+    <form action="/send-email" method="POST">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">{{field.label_tag}}</label>
+            {{field}}
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        {% endfor %}
+
+
+        <button type="submit" style="width: 170px;" class="connect-btn connect">
+            Send an email
+        </button>
+    </form>
 </div>
 {% endblock content %}
