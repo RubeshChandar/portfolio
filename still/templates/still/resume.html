@@ -1,26 +1,60 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Resume{% endblock title %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static "still/index.css" %}">
+{% endblock css %}
+
 {% block content %}
-<div class="container p-5">
-    <h1>This showcases my resume</h1>
-
-    <form action="/send-email" method="POST">
-        {% csrf_token %}
-
-        {% for field in form %}
-        <div class="form-group">
-            <label for="exampleInputEmail1">{{field.label_tag}}</label>
-            {{field}}
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        {% endfor %}
-
-
-        <button type="submit" style="width: 170px;" class="connect-btn connect">
-            Send an email
+<div class="container prof-sum">
+    {% include "still/include/about-static.html" %}
+    <div class="flx">
+        <button type="submit" style="width: 200px;color:white;background-color:green" class="connect-btn connect">
+            GET MY RESUME
         </button>
-    </form>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row p-5">
+        <div class="col-md-6 p-4 reach-me">
+            <h1 class="text-center" style='font-weight:bold'>Reach Me</h1>
+            <p class="reach-me-b">
+                Have a project in mind or just want to connect? I'd love to hear from you let's make it happen!
+            </p>
+            {% include "still/include/reach-me.html" %}
+        </div>
+
+        <div class="col-md-6 p-4 touche">
+            <h1 class="text-center" style='font-weight:bold'>GET IN TOUCH</h1>
+            <form action="/resume" method="POST" novalidate>
+                {% csrf_token %}
+
+                {% for field in form %}
+                <div class="form-group">
+                    {{field}}
+                    <small class="form-text text-muted er" style="color: #FF0000 !important;">
+                        {{field.errors}}
+                    </small>
+                </div>
+                {% endfor %}
+                <div class="flx">
+                    <button type="submit" style="width: 170px;" class="connect-btn connect">
+                        Send an email
+                    </button>
+                </div>
+            </form>
+
+            {% if messages %}
+            <ul class="messages list-unstyled">
+                {% for message in messages %}
+                <li class="{{message.tags}}">{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+        </div>
+    </div>
 </div>
 {% endblock content %}
