@@ -3,3 +3,4 @@
 .vscode
 *.env
 .prettierignore
+db.sqlite3
