@@ -5,4 +5,5 @@ urlpatterns = [
     path("", views.index, name="home"),
     path("resume", views.ResumeView.as_view(), name="resume"),
     path("experience", views.experience, name="exp"),
+    path("resume/view-pdf", views.pdf_view, name="pdf"),
 ]

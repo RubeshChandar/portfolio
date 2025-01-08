@@ -1,8 +1,11 @@
+from django.http import FileResponse, HttpResponse
 from django.shortcuts import render, redirect
 from .forms import EmailForm
 from django.views import View
 from django.contrib import messages
 from .constants import experiences
+import os
+from django.conf import settings
 
 
 def index(request):
@@ -31,21 +34,27 @@ class ResumeView(View):
         })
 
 
-# def sendEmail(request):
-#     add = ['rubeshchander.rc@gmail.com']
-#     if request.method == "POST":
-#         add.append(request.POST["email_id"])
-#         name = request.POST["name"]
-#         message = request.POST["comments"]
-#         send_mail(
-#             subject=f"Thank you {name} for viewing my website",
-#             message="Send from django project",
-#             recipient_list=add[1:],
-#             from_email=None,
-#             fail_silently=False,
-#         )
+def pdf_view(request):
+    path = os.path.join(settings.MEDIA_ROOT, "cv.pdf")
+    response = FileResponse(open(path, 'rb'), content_type="application/pdf")
+    response["Content-Disposition"] = "filename={}"
+    return response
 
-#     return redirect("resume")
+    # def sendEmail(request):
+    #     add = ['rubeshchander.rc@gmail.com']
+    #     if request.method == "POST":
+    #         add.append(request.POST["email_id"])
+    #         name = request.POST["name"]
+    #         message = request.POST["comments"]
+    #         send_mail(
+    #             subject=f"Thank you {name} for viewing my website",
+    #             message="Send from django project",
+    #             recipient_list=add[1:],
+    #             from_email=None,
+    #             fail_silently=False,
+    #         )
+
+    #     return redirect("resume")
 
 
 def experience(request):
