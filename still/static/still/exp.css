@@ -1,0 +1,110 @@
+.timeline {
+    width: 100%;
+    padding: 100px 50px;
+    position: relative;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: calc(24% + 13px);
+    bottom: 100px;
+    width: 4px;
+    background: green;
+}
+
+.timeline:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.entry {
+    clear: both;
+    text-align: left;
+    position: relative;
+}
+
+.entry .title {
+    margin-bottom: 0.5em;
+    float: left;
+    width: 23%;
+    padding-right: 30px;
+    text-align: right;
+    position: relative;
+}
+
+.entry .title:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 5px solid salmon;
+    background-color: #fff;
+    border-radius: 100%;
+    top: 15%;
+    right: -8px;
+    z-index: 99;
+}
+
+.entry .title h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.entry .title p i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.entry .title p {
+    margin: 0;
+    font-size: 100%;
+    font-weight: bold;
+    color: red;
+}
+
+.entry .body {
+    margin: 0 0 3em;
+    float: right;
+    width: 77%;
+    padding-left: 30px;
+    padding-right: 10%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.entry .body p {
+    line-height: 1.4em;
+    font-weight: bold !important;
+    font-size: 1.2rem;
+}
+
+.entry .body p:first-child {
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.entry .body ul {
+    color: black;
+    padding-left: 15px;
+}
+
+.entry .body ul li:before {
+    margin-right: 0.5em;
+}
+
+.skill_div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill {
+    background-color: #cdd1cd;
+    padding: 5px 10px;
+    font-weight: bold;
+}

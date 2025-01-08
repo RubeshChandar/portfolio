@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Experience{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "still/exp.css" %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="timeline">
+    {% for experience in experiences %}
+
+    <div class="entry">
+        <div class="title">
+            <h3>{{experience.year}}</h3>
+            <p>
+                {% if experience.education %}
+                <i class="fa-solid fa-graduation-cap" style="color:black"></i>
+                {% else %}
+                <i class="fa-solid fa-user-tie" style="color:black"></i>
+                {% endif %}
+                {{experience.company |safe}}
+            </p>
+        </div>
+        <div class="body">
+            <p>{{experience.heading}}</p>
+            <ul>
+                {% for pointers in experience.content  %}
+                <li>{{pointers |safe}}</li>
+                {% endfor %}
+            </ul>
+            <div class="skill_div">
+                {% for skill in experience.skills  %}
+                <span class="skill">{{skill}}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+
+{% endblock content %}

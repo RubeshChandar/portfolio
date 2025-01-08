@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import EmailForm
 from django.views import View
 from django.contrib import messages
+from .constants import experiences
 
 
 def index(request):
@@ -45,3 +46,9 @@ class ResumeView(View):
 #         )
 
 #     return redirect("resume")
+
+
+def experience(request):
+    return render(request, "still/experience.html", {
+        "experiences": experiences
+    })
