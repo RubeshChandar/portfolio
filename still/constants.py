@@ -12,8 +12,24 @@ experiences = [
             "Participated in a group MSc Project, fostering collaboration, problem-solving, and project management skills critical for professional success."
         ],
         "skills": ["Machine Learning", "TensorFlow", "R", "Proficiency in Cloud Computing",
-                   "Algorithm Design", "Data Security", "Geospatial Data Analysis",
+                   "Algorithm Design", "Data Security", "Geospatial Data Analysis", "GIS", "Leaflet", "Mapbox",
                    "Research Methodology", "Team Collaboration", "Web Mapping Technologies"],
+    },
+    {
+        "year": "Nov 2023 - Sept 2024",
+        "company": "Primark<br> (Part-time)",
+        "education": False,
+        "heading": "Customer Retail Assistant",
+        "content": [
+            "Delivered outstanding customer service by assisting over 100+ customers daily with product inquiries, returns, and purchases, ensuring a seamless shopping experience.",
+            "Maintained inventory accuracy by organizing stock, restocking shelves, and conducting regular audits to ensure product availability.",
+            "Worked collaboratively with a team of 30+ associates to maintain store operations during peak hours, ensuring customer satisfaction and operational efficiency",
+            "Resolved customer complaints efficiently and professionally, contributing to improved customer satisfaction and loyalty.",
+            "Successfully balanced part-time work with academic responsibilities, demonstrating strong organizational and multitasking skills.",
+            "Thrived in a fast-paced retail environment, adapting to changing priorities and managing workloads effectively during busy periods.",
+        ],
+        "skills": ["Adaptability", "Problem Solving", "Time Management", "Team Collaboration", "Sales Performance"
+                   "Inventory Management", "Customer Service Excellence"],
     },
     {
         "year": "Jan 2023 - March 2024",
@@ -32,5 +48,23 @@ experiences = [
         "skills": ["Full-stack development", "Angular", "Firebase", "Flutter", "Django", "Linux", "Git / Github",
                    "CI / CD", "Devops", "Docker", "Efficient Algorithms",
                    "PyTorch", "NumPy", "Pandas", "Scikit-learn"],
+    },
+    {
+        "year": "May 2021 - Jan 2023",
+        "company": "Tata Consultancy Services",
+        "education": False,
+        "heading": "BFS Engineer @ Bank of America",
+        "content": [
+            "Managed the <b>deployment and supervision</b> of the Bank of America’s new banking app into production, ensuring smooth operation with <b>minimal issues</b>.",
+            "Supervised and maintained the <b>health and performance</b> of all JVMs and servers, achieving more than <b>95% uptime</b>.",
+            "Collaborated with the team to implement measures that mitigated <b>70% of potential issues</b> and resolved <b>80+ known issues</b> effectively.",
+            "Resolved <b>85% of critical incidents</b> promptly, focusing on high-priority issues to minimize application performance impact.",
+            "Maintained seamless operation of the mobile banking application, achieving <b>above 90% functionality</b> consistently.",
+            "Collaborated with <b>10+ clients</b> to gather requirements and delivered innovative solutions, enhancing system efficiency by <b>20%</b>.",
+            "Developed and implemented <b>15+ REST APIs</b>, ensuring cross-platform compatibility and reducing deployment time by <b>25%</b>.",
+            "Integrated <b>Docker</b> for containerization and <b>optimized system environments</b>, improving scalability and simplifying deployment processes."
+        ],
+        "skills": ["Mobile App Developement", "Rest API", "Dart", "XML", "Glassbox", "L3 Mobile support",
+                   "Splunk", "Java", "nodeJS", "Incident Management", "MySQL", "Dart", "Nginx"],
     },
 ]

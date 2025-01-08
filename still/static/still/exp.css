@@ -8,7 +8,7 @@
     content: '';
     position: absolute;
     top: 50px;
-    left: calc(24% + 13px);
+    left: calc(23% + 28px);
     bottom: 100px;
     width: 4px;
     background: green;

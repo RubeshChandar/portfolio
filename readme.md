@@ -19,7 +19,7 @@ A modern and responsive portfolio web application built with Django, showcasing 
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: SQLite (default) or PostgreSQL (for production)
 - **Styling Framework**: Bootstrap or Tailwind CSS (optional)
-- **Hosting**: Compatible with services like Heroku, AWS, or PythonAnywhere Optionally Raspberry pi with dynamic DNS
+- **Hosting**: Compatible with services like Heroku, AWS. (Optionally Raspberry pi with dynamic DNS)
 - **Version Control**: Git and GitHub
 
 ---
