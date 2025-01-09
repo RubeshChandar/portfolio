@@ -1,5 +1,5 @@
 from django import forms
-from .models import Email
+from .models import Message
 
 placeholders = {
     "email_id": "Please enter your email *",
@@ -9,7 +9,7 @@ placeholders = {
 }
 
 
-class EmailForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -22,7 +22,7 @@ class EmailForm(forms.ModelForm):
 
     class Meta:
         fields = "__all__"
-        model = Email
+        model = Message
         labels = {
             "email_id": "Email",
             "name": "Full name",

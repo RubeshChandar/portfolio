@@ -1,11 +1,12 @@
-from django.http import FileResponse, HttpResponse
+import os
+from django.conf import settings
+from django.http import FileResponse
 from django.shortcuts import render, redirect
-from .forms import EmailForm
+from .forms import MessageForm
 from django.views import View
 from django.contrib import messages
 from .constants import experiences
-import os
-from django.conf import settings
+from django.core.mail import EmailMessage, send_mail
 
 
 def index(request):
@@ -14,23 +15,24 @@ def index(request):
 
 class ResumeView(View):
     def get(self, request):
-        emailform = EmailForm()
+        messageForm = MessageForm()
         return render(request, "still/resume.html", {
-            "form": emailform,
+            "form": messageForm,
         })
 
     def post(self, request):
-        emailform = EmailForm(request.POST)
+        messageForm = MessageForm(request.POST)
 
-        if emailform.is_valid():
-            emailform.save()
+        if messageForm.is_valid():
+            messageForm.save()
             messages.success(
                 request, "You request was completed successfully !")
+            sendEmail(messageForm.cleaned_data)
             return redirect("resume")
 
         messages.error(request, "You're message wasn't sent")
         return render(request, "still/resume.html", {
-            "form": emailform,
+            "form": messageForm,
         })
 
 
@@ -40,21 +42,22 @@ def pdf_view(request):
     response["Content-Disposition"] = "filename={}"
     return response
 
-    # def sendEmail(request):
-    #     add = ['rubeshchander.rc@gmail.com']
-    #     if request.method == "POST":
-    #         add.append(request.POST["email_id"])
-    #         name = request.POST["name"]
-    #         message = request.POST["comments"]
-    #         send_mail(
-    #             subject=f"Thank you {name} for viewing my website",
-    #             message="Send from django project",
-    #             recipient_list=add[1:],
-    #             from_email=None,
-    #             fail_silently=False,
-    #         )
 
-    #     return redirect("resume")
+def sendEmail(data):
+    name = data["name"]
+    message = data["comments"]
+    mail_id = data['email_id']
+    company = data['company']
+    send_mail(
+        subject=f"You got one new message from {name}",
+        message=f"{name} sent you a new message <br> Message: {message} <br>You can reply to {mail_id}",
+        recipient_list=['rubeshchander.rc@gmail.com'],
+        from_email=None,
+        fail_silently=False,
+        html_message=f"{name} from {company} sent you a new message <br> Message: {message} <br>You can reply to {mail_id}",
+    )
+
+    return redirect("resume")
 
 
 def experience(request):

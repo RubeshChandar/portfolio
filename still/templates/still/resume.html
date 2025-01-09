@@ -29,6 +29,9 @@
 
         <div class="col-md-6 p-4 touche">
             <h1 class="text-center" style='font-weight:bold'>GET IN TOUCH</h1>
+            <p class="reach-me-b text-center" style="color:rgb(253, 60, 60)">
+                Send me an message
+            </p>
             <form action="/resume" method="POST" novalidate>
                 {% csrf_token %}
 
@@ -42,7 +45,7 @@
                 {% endfor %}
                 <div class="flx">
                     <button type="submit" style="width: 170px;" class="connect-btn connect">
-                        Send an email
+                        Send message
                     </button>
                 </div>
             </form>
