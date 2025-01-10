@@ -75,7 +75,7 @@ DEBUG=True
 DATABASE_URL=sqlite:///db.sqlite3
 ```
 
-### Folder Structure**
+### Folder Structure
 
 ```bash
 portfolio/
@@ -87,6 +87,8 @@ portfolio/
 │
 ├── static/                   # Static files (CSS, JS, Images)
 │   ├── cv.pdf
+│   ├── images/               # Static images folder
+│   ├── globlal.css           # Global styling 
 │
 ├── templates/                # HTML templates
 │   ├── base.html             # Base template
