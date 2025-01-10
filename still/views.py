@@ -6,7 +6,7 @@ from .forms import MessageForm
 from django.views import View
 from django.contrib import messages
 from .constants import experiences
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import send_mail
 
 
 def index(request):

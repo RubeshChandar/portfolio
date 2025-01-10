@@ -75,7 +75,7 @@ DEBUG=True
 DATABASE_URL=sqlite:///db.sqlite3
 ```
 
-**### Folder Structure**
+### Folder Structure**
 
 ```bash
 portfolio/
@@ -86,12 +86,13 @@ portfolio/
 │   ├── wsgi.py               # WSGI entry point
 │
 ├── static/                   # Static files (CSS, JS, Images)
+│   ├── cv.pdf
+│
 ├── templates/                # HTML templates
 │   ├── base.html             # Base template
-│   ├── index.html            # Home/Portfolio page
-│   ├── contact.html          # Contact page
+│   ├── nav.html              # Navigation header 
 │
-├── projects/                 # App for handling projects
+├── still/                    # App for handling projects
 │   ├── models.py             # Project database models
 │   ├── views.py              # Views for the projects
 │   ├── templates/            # Templates for project-related pages
@@ -101,7 +102,7 @@ portfolio/
 └── manage.py                 # Django management script
 ```
 
-###Contact
+### Contact
 
 Feel free to reach out for collaborations or feedback:
 
