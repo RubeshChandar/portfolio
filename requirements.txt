@@ -5,8 +5,10 @@ cssbeautifier==1.15.1
 Django==5.0
 djlint==1.36.3
 EditorConfig==0.17.0
+gunicorn==23.0.0
 jsbeautifier==1.15.1
 json5==0.10.0
+packaging==24.2
 pathspec==0.12.1
 pillow==11.0.0
 python-dotenv==1.0.1

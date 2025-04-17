@@ -1,0 +1,30 @@
+name: portfolio-rubesh
+
+services:
+  portfolio:
+    build: .
+    image: portfolio-app
+    container_name: portfolio-django
+    restart: unless-stopped
+    command: /app/entrypoint.sh
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - staticfiles:/app/staticfiles
+
+  nginx:
+    image: nginx:alpine
+    container_name: portfolio-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - staticfiles:/app/staticfiles
+    depends_on:
+      - portfolio
+
+volumes:
+  staticfiles:
