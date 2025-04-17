@@ -126,3 +126,5 @@ MEDIA_ROOT = BASE_DIR / "static"
 MEDIA_URL = "/media/"
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+CSRF_TRUSTED_ORIGINS = ["https://rubeshchandar.com",
+                        "https://www.rubeshchandar.com"]
