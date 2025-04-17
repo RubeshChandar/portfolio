@@ -22,7 +22,7 @@ services:
       - "80:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - staticfiles:/app/staticfiles
+      - staticfiles:/app/staticfiles:ro
     depends_on:
       - portfolio
 
