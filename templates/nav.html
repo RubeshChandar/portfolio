@@ -16,8 +16,8 @@
             <a href="{% url "home" %}" class="{% if url_name == 'home' %}active{% endif %}">Home</a>
             <a href="{% url "resume" %}" class="{% if url_name == 'resume' %}active{% endif %}">Resume</a>
             <a href="{% url "exp" %}" class="{% if url_name == 'exp' %}active{% endif %}">Experience</a>
-            <a href="">Projects</a>
-            <a href="">Blog</a>
+            {% comment %} <a href="">Projects</a> {% endcomment %}
+            {% comment %} <a href="">Blog</a> {% endcomment %}
         </div>
         {% endwith %}
 
