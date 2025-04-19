@@ -12,6 +12,7 @@ services:
     env_file:
       - .env
     volumes:
+      - .:/app
       - staticfiles:/app/staticfiles
 
   nginx:

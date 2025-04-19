@@ -1,36 +1,50 @@
 {% load static %}
-<nav class="navbar navbar-col">
+<nav class="navbar navbar-col navbar-expand-lg">
 
-    <div class="row max-w">
+    <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+        <!--Brand-->
+        <a class="navbar-brand" href="{% url "home" %}">
+            <img src="{% static "images/selfie.ico" %}" alt="Logo" width="30" height="30"
+                class="d-inline-block align-text-top">
+            <span class="name"> Rubesh Chandar </span>
+        </a>
 
-        <div class="col-md-3">
-            <a class="navbar-brand" href="{% url "home" %}">
-                <img src="{% static "images/selfie.ico" %}" alt="Logo" width="30" height="30"
-                    class="d-inline-block align-text-top">
-                <span class="name"> Rubesh Chandar </span>
-            </a>
-        </div>
+        <!--Hamburger-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+            aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        {% with request.resolver_match.url_name as url_name %}
-        <div class="col-md-6 text-center links">
-            <a href="{% url "home" %}" class="{% if url_name == 'home' %}active{% endif %}">Home</a>
-            <a href="{% url "resume" %}" class="{% if url_name == 'resume' %}active{% endif %}">Resume</a>
-            <a href="{% url "exp" %}" class="{% if url_name == 'exp' %}active{% endif %}">Experience</a>
-            {% comment %} <a href="">Projects</a> {% endcomment %}
-            {% comment %} <a href="">Blog</a> {% endcomment %}
-        </div>
-        {% endwith %}
+        <div class="collapse navbar-collapse" id="navContent">
 
-        <div class="col-md-3 text-end">
-            <a href="https://linkedin.com/in/rubeshchandar" class="linkedin">
-                <i class="fa-brands fa-linkedin" style="font-size:30px"></i>
-            </a>
-            <a href="https://github.com/RubeshChandar" class="git">
-                <i class="fa-brands fa-github" style="font-size:30px;color:black"></i>
-            </a>
-            <a href="mailto:rubeshchandar@gmail.com" class="mail">
-                <i class="fa-solid fa-envelope" style="font-size:30px"></i>
-            </a>
+            {% with request.resolver_match.url_name as url_name %}
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'resume' %}active{% endif %}"
+                        href="{% url 'resume' %}">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if url_name == 'exp' %}active{% endif %}"
+                        href="{% url 'exp' %}">Experience</a>
+                </li>
+            </ul>
+            {% endwith %}
+
+            <div class="social-icons text-end">
+                <a href="https://linkedin.com/in/rubeshchandar" class="linkedin">
+                    <i class="fa-brands fa-linkedin" style="font-size:30px"></i>
+                </a>
+                <a href="https://github.com/RubeshChandar" class="git">
+                    <i class="fa-brands fa-github" style="font-size:30px;color:black"></i>
+                </a>
+                <a href="mailto:rubeshchandar@gmail.com" class="mail">
+                    <i class="fa-solid fa-envelope" style="font-size:30px"></i>
+                </a>
+            </div>
+
         </div>
 
     </div>

@@ -1,6 +1,9 @@
+.main {
+    border-bottom: 2px solid black;
+}
+
 .main img {
     height: 85vh;
-    border-bottom: 2px solid black;
 }
 
 .hw {
@@ -24,6 +27,26 @@
     animation:
         typing 3.5s steps(50),
         cursor .4s step-end infinite alternate;
+}
+
+@media (width<1200px) {
+
+    .hw {
+        margin-top: 20px;
+        font-size: 1.8rem;
+    }
+
+    .sw {
+        padding: 5px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: green;
+        border-right: none;
+        white-space: wrap;
+        overflow: hidden;
+        width: 100%;
+        animation: none;
+    }
 }
 
 @keyframes cursor {
@@ -54,6 +77,10 @@
 .flx {
     display: flex;
     justify-content: center;
+}
+
+.flx>button {
+    width: 180px;
 }
 
 .form-group {

@@ -113,3 +113,55 @@ body {
     height: 100%;
     border-width: 0 1px 0 1px;
 }
+
+@media (width < 1000px) {
+
+    .navbar {
+        max-height: none;
+    }
+
+    .active {
+        font-weight: bold !important;
+        font-size: 1.1rem !important;
+        border-bottom: 2px solid black;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .navbar-brand,
+    .navbar-toggler {
+        margin-bottom: 5px;
+    }
+
+    .navbar .text-end {
+        margin-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .links a {
+        display: inline-block;
+
+    }
+
+    .text-end {
+        display: flex;
+        justify-content: center !important;
+        margin-top: 5px;
+        gap: 15px;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+}
