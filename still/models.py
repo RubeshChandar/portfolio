@@ -27,3 +27,23 @@ class Experience(models.Model):
 
     class Meta:
         ordering = ["created_at"]
+
+
+class CV(models.Model):
+    file = models.FileField(upload_to='cv/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"CV uploaded at {self.created_at}"
+
+    def save(self, *args, **kwargs):
+        # Delete old file if it exists
+        if CV.objects.exists():
+            old_cv = CV.objects.first()
+            if old_cv.file and old_cv != self:
+                old_cv.file.delete(save=False)
+                old_cv.delete()
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = "CV"

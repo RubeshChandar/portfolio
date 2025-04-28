@@ -1,13 +1,13 @@
 import os
 from django.conf import settings
-from django.http import FileResponse
+from django.http import FileResponse, Http404
 from django.shortcuts import render, redirect
 from .forms import MessageForm
 from django.views import View
 from django.contrib import messages
 from .constants import experiences
 from django.core.mail import send_mail
-from .models import Experience
+from .models import Experience, CV
 
 
 def index(request):
@@ -38,10 +38,21 @@ class ResumeView(View):
 
 
 def pdf_view(request):
-    path = os.path.join(settings.MEDIA_ROOT, "cv.pdf")
-    response = FileResponse(open(path, 'rb'), content_type="application/pdf")
-    response["Content-Disposition"] = "filename={}"
-    return response
+    cv = CV.objects.first()  # Only one CV expected
+    if not cv or not cv.file:
+        raise Http404("No CV found.")
+
+    # Build absolute path
+    path = cv.file.path
+
+    # Return file as response
+    try:
+        response = FileResponse(
+            open(path, 'rb'), content_type="application/pdf")
+        response["Content-Disposition"] = f'filename="{os.path.basename(path)}"'
+        return response
+    except FileNotFoundError:
+        raise Http404("CV file not found.")
 
 
 def sendEmail(data):
