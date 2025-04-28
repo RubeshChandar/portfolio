@@ -7,6 +7,7 @@ from django.views import View
 from django.contrib import messages
 from .constants import experiences
 from django.core.mail import send_mail
+from .models import Experience
 
 
 def index(request):
@@ -61,6 +62,7 @@ def sendEmail(data):
 
 
 def experience(request):
+    exp = Experience.objects.all()
     return render(request, "still/experience.html", {
-        "experiences": experiences
+        "experiences": exp
     })

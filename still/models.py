@@ -10,3 +10,20 @@ class Message(models.Model):
 
     def __str__(self):
         return f"{self.name} enquired for {self.company}"
+
+
+class Experience(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+    year = models.CharField(max_length=100)
+    company = models.TextField()
+    education = models.BooleanField(default=False)
+    heading = models.CharField(max_length=255)
+    content = models.JSONField()  # Bullet points
+    skills = models.JSONField()   # Skills list
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        ordering = ["created_at"]
