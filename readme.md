@@ -112,3 +112,7 @@ Feel free to reach out for collaborations or feedback:
 - GitHub: @RubeshChandar
 - LinkedIn: [linkedin.com/in/rubeshchandar](https://www.linkedin.com/in/rubeshchandar/)
 - Website : [rubeshchandar](https://rubeshchandar.com/)
+
+## 📌 License
+
+This project is licensed under the [MIT License](./LICENSE) © 2025 Rubeshchandar Rajkumar.
